@@ -1,14 +1,15 @@
-const toggleMenu = document.getElementById('toggle-menu');
-const mainMenu = document.getElementById('myTopnav');
-
-toggleMenu.addEventListener('click', () => {
-    mainMenu.classList.toggle('active');
+document.getElementById('menuToggle').addEventListener('click', function() {
+  var navLinks = document.getElementById('navLinks');
+  if (navLinks.style.display === 'flex') {
+      navLinks.style.display = 'none';
+  } else {
+      navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+  }
 });
 
-
-
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
+/*  function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
@@ -16,6 +17,7 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+*/
 
 /* Contact Form Regex Area */
 
