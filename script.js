@@ -19,6 +19,24 @@ document.getElementById('menuToggle').addEventListener('click', function() {
 }
 */
 
+/* Image slide index.html */
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll(".unique-image");
+  let currentIndex = 0;
+
+  function showNextImage() {
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add("active");
+  }
+
+  // Initially show the first image
+  images[currentIndex].classList.add("active");
+
+  // Change image every 5 seconds (5000 milliseconds)
+  setInterval(showNextImage, 5000);
+});
+
 /* Contact Form Regex Area */
 
 const fullNameInput = document.getElementById('fullNameInput');
