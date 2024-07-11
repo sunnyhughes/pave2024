@@ -8,16 +8,16 @@ document.getElementById('menuToggle').addEventListener('click', function() {
   }
 });
 
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-/*  function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
+/* Toggle between adding and removing the "responsive" class to navLinks when the user clicks on the icon */
+  function myFunction() {
+  var x = document.getElementById("navLinks");
+  if (x.className === "navLinks") {
     x.className += " responsive";
   } else {
-    x.className = "topnav";
+    x.className = "navLinks";
   }
 }
-*/
+
 
 /* Image slide index.html */
 document.addEventListener("DOMContentLoaded", function() {
@@ -36,6 +36,42 @@ document.addEventListener("DOMContentLoaded", function() {
   // Change image every 5 seconds (5000 milliseconds)
   setInterval(showNextImage, 5000);
 });
+
+
+/* curriculum.html areas */
+
+document.addEventListener("DOMContentLoaded", function() {
+    const imageList1 = [
+        'images/classroombfc.jpg',
+        'images/derrickmitchellpave.jpg',
+        'images/accoutability2024.jpg'
+    ];
+    const imageList2 = [
+        'images/accountabilitypathway.jpg',
+        'images/reneeteaches.jpg',
+        'images/classmates.jpg'
+    ];
+    
+    let currentIndex1 = 0;
+    let currentIndex2 = 0;
+    
+    const imageElement1 = document.querySelectorAll(".session-bottom-image")[0];
+    const imageElement2 = document.querySelectorAll(".session-bottom-image")[1];
+    
+    function changeImage1() {
+        currentIndex1 = (currentIndex1 + 1) % imageList1.length;
+        imageElement1.src = imageList1[currentIndex1];
+    }
+    
+    function changeImage2() {
+        currentIndex2 = (currentIndex2 + 1) % imageList2.length;
+        imageElement2.src = imageList2[currentIndex2];
+    }
+    
+    setInterval(changeImage1, 8000);
+    setInterval(changeImage2, 6000);
+});
+
 
 /* Contact Form Regex Area */
 

@@ -259,6 +259,79 @@ main {
       max-width: 70%; /* Adjust the percentage as needed */
   }
 }
+
+/*  curriculum.html page stylings */
+#session-layout {
+  padding: 20px;
+}
+
+.session-image-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.session-image-container p {
+  flex: 1;
+  margin-right: 20px; /* Space between text and image */
+}
+
+.side-image {
+  max-width: 300px; /* Adjust as needed */
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: for rounded corners */
+}
+
+/* Styling for the session list */
+.session-list {
+  list-style: disc; /* Default disc bullets */
+  padding-left: 20px; /* Space for the bullets */
+}
+
+.session-list li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .session-image-container {
+    flex-direction: column;
+  }
+
+  .session-image-container p {
+    margin-right: 0;
+    margin-bottom: 20px; /* Space between text and image in column layout */
+  }
+
+  .side-image {
+    max-width: 100%;
+  }
+}
+
+/* New section for bottom images */
+#session-images {
+  margin-top: 40px; /* Space between sections */
+}
+
+.session-image-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.session-bottom-image {
+  max-width: 45%; /* Adjust based on your design needs */
+  height: auto;
+  margin: 10px;
+  border-radius: 10px; /* Optional: for rounded corners */
+  object-fit: cover; /* Ensures images maintain aspect ratio and cover their container */
+}
+
+@media (max-width: 768px) {
+  .session-bottom-image {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
 #new-session-starts {
   border: dotted 5px rgb(217, 255, 48);
 }
@@ -304,6 +377,9 @@ a {
   font-size: 20px;
 }
 
+
+
+/*
 #curriculum-timeline h4{
   font-size: 18px;
 }
@@ -316,31 +392,15 @@ a {
   text-decoration: underline;
 }
 
-/* Modules Headers */
-
-.module h4 {
-  display: flex;
-  font-size: 21px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.module h4 .presenter,
-.module h4 .topic {
-  font-style: bold;
-  font-size: 20px;
-}
-
-.activity {
-  color: rgb(12,85,180);
-  text-align: center;
-}
+*/
 
 .graduation {
   color: rgb(12,85,180);
   text-align: center;
   border: solid 5px rgb(217, 255, 48);
 }
+
+
 /* Contact page */
 
 #contact p {
