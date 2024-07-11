@@ -20,22 +20,29 @@ document.getElementById('menuToggle').addEventListener('click', function() {
 
 
 /* Image slide index.html */
+
 document.addEventListener("DOMContentLoaded", function() {
-  const images = document.querySelectorAll(".unique-image");
-  let currentIndex = 0;
+    const images = document.querySelectorAll(".unique-image");
+    let currentIndex = 0;
 
-  function showNextImage() {
-      images[currentIndex].classList.remove("active");
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].classList.add("active");
-  }
+    function showImage(index) {
+        images.forEach((image, idx) => {
+            if (idx === index) {
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        });
+    }
 
-  // Initially show the first image
-  images[currentIndex].classList.add("active");
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
 
-  // Change image every 5 seconds (5000 milliseconds)
-  setInterval(showNextImage, 5000);
+    setInterval(changeImage, 5000); // Change image every 5 seconds (5000 milliseconds)
 });
+
 
 
 /* curriculum.html areas */

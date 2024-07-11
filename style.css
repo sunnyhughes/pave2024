@@ -1,14 +1,15 @@
 /* General Styles */
-
-
-
-
-/* Header and Navigation Styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 15px;
-  padding: 15px;
+  margin: 10px;
+  padding: 10px;
 }
+
+main {
+  padding: 20px;
+}
+
+/* Header and Navigation Styles */
 
 header {
   background-color: #f8f8f8;
@@ -88,29 +89,67 @@ header {
 /* Main areas */
 
 /* index.html styles */
+
+#image-transition {
+  padding: 20px 0; /* Adjust padding as needed */
+  text-align: center; /* Center align content within one section */
+}
+
+.image-container {
+display: inline-block; /* Display as inline-block to center with margin auto */
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+
 .unique-images {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* Adjust the size as needed */
-  margin: 20px auto; /* Add some margin for spacing */
+  max-width: 100%; /* Ensure images do not exceed container width */
 }
 
 .unique-image {
-  position: absolute;
-  width: 100%;
+  max-width: 45%; /* Adjsut image sie relative to container */
   height: auto;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  margin: 10px;
+  border-radius: 10px; /* Optional for rounded corners */
 }
 
-.unique-image.active {
-  opacity: 1;
+@media (max-width: 768px) {
+  .unique-image {
+    max-width: 100%; /* Full width on smaller screens */
+  }
 }
-
 
 /* ourteam.html styles */
+#about-us {
+  padding: 20px 0; /* Adjust padding as needed */
+  text-align: center; /* Center align content within section */
+}
+
+.about-image-container {
+  max-width: 80%; /* Ensure images do not exceed container width */
+  width: 60%;
+  margin: 0 auto; /* Center align horizontally */
+}
+
+.about-image-container img {
+  max-width: 100%; /* Adjust image size relative to container */
+  height: auto;
+  display: block; /* Remove any default inline styles */
+  margin: 0 auto; /* Center align image within container */
+}
+
+.caption {
+  margin-top: 10px; /* Adjust spacing between image and caption */
+  font-style: italic;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .about-image-container {
+    max-width: 95%; /* Adjust for smaller screens */
+    width: 100%; /* Full width on smaller screens */
+  }
+}
 
 /* 5corevalues.html styles */
 
@@ -206,61 +245,8 @@ header {
   }
 }
 
-
-/* results.html styling */
-main {
-  padding: 20px;
-}
-
-#outcome {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.image-content {
-  flex: 1 1 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.text-content {
-  flex: 1 1 65%;
-}
-
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .content-wrapper {
-      flex-direction: column;
-  }
-
-  .image-content {
-      margin: 0 0 20px 0;
-      flex: 1 1 100%;
-  }
-
-  .text-content {
-      flex: 1 1 100%;
-  }
-
-  .responsive-image {
-      max-width: 70%; /* Adjust the percentage as needed */
-  }
-}
-
 /*  curriculum.html page stylings */
+
 #session-layout {
   padding: 20px;
 }
@@ -345,6 +331,57 @@ main {
   text-align: center;
 }
 
+/* results.html styling */
+
+#outcome {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.image-content {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.text-content {
+  flex: 1 1 65%;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+      flex-direction: column;
+  }
+
+  .image-content {
+      margin: 0 0 20px 0;
+      flex: 1 1 100%;
+  }
+
+  .text-content {
+      flex: 1 1 100%;
+  }
+
+  .responsive-image {
+      max-width: 70%; /* Adjust the percentage as needed */
+  }
+}
+
+
 h2 {
   text-align: center;
 }
@@ -378,22 +415,6 @@ a {
 }
 
 
-
-/*
-#curriculum-timeline h4{
-  font-size: 18px;
-}
-
-#curriculum a {
-  display: block;
-  margin: 15px auto;
-  color: rgb(12, 85, 180);
-  text-align: center;
-  text-decoration: underline;
-}
-
-*/
-
 .graduation {
   color: rgb(12,85,180);
   text-align: center;
@@ -402,14 +423,16 @@ a {
 
 
 /* Contact page */
+#welcome {
+  padding: 5px;
+}
 
 #contact p {
-  margin: 10px;
-  padding: 10px;
 
 }
 
 #social a {
+  padding: 5px;
   color: rgb(12, 85, 180);
   text-decoration: underline;
 }
