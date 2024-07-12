@@ -1,16 +1,15 @@
-document.getElementById('menuToggle').addEventListener('click', function() {
-  var navLinks = document.getElementById('navLinks');
-  var menuToggle = document.getElementById('menuToggle');
-  if (navLinks.style.display === 'block') {
-      navLinks.style.display = 'none';
-      menuToggle.classList.remove('fa-times');
-      menuToggle.classList.add('fa-bars');
-} else {
-      navLinks.style.display = 'block';
-      menuToggle.classList.remove('fa-bars');
-      menuToggle.classList.add('fa-times')
-    }
-});
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+      x.className += " responsive";
+      document.querySelector('.icon i').classList.remove('fa-bars');
+      document.querySelector('.icon i').classList.add('fa-times');
+  } else {
+      x.className = "topnav";
+      document.querySelector('.icon i').classList.remove('fa-times');
+      document.querySelector('.icon i').classList.add('fa-bars');
+  }
+}
 
 
 /* Image slide index.html */
