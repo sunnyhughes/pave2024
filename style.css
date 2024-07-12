@@ -1,106 +1,385 @@
 /* General Styles */
-
-
-
-
-/* Header and Navigation Styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 15px;
-  padding: 15px;
+  margin: 10px;
+  padding: 10px;
 }
 
-header {
-  background-color: #f8f8f8;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Header and Navigation Styles */
 
 .header-container {
+  padding: 10px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
+flex: 0 0 auto;
 }
 
 .logo {
-  max-width: 100px; /* Adjust the size as needed */
   height: auto;
+  width: 70px;
   margin-right: 10px;
 }
 
+.title-container {
+  flex: 1;
+  text-align: center;
+}
+
 .title {
-  font-size: 24px;
+  font-size: 2em;
   font-weight: bold;
+  white-space: nowrap;
 }
 
-.navbar {
-  width: 100%;
-  border-top: 1px solid #ccc;
-  margin-top: 10px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 10px 0;
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-}
-
-#menuToggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  margin-left: auto;
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .nav-links {
-      display: none;
+  .title {
+      font-size: 1.5em;
+      white-space: normal;
+  }
+
+  .header-container {
       flex-direction: column;
+  }
+
+  .topnav {
       width: 100%;
+  }
+
+  .topnav a {
+      display: block;
       text-align: center;
   }
 
-  .nav-links li {
-      margin: 10px 0;
-  }
-
-  #menuToggle {
-      display: flex;
+  .icon {
+      display: block;
   }
 }
+
+/* Navigation menu stylings */
+
+       /* Add a black background color to the top navigation */
+       .topnav {
+        background-color: #0033a0;
+        overflow: hidden;
+      }
+      
+      /* Style the links inside the navigation bar */
+      .topnav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      
+      /* Change the color of links on hover */
+      .topnav a:hover {
+        background-color: #faf890;
+        color: black;
+      }
+      
+      /* Add an active class to highlight the current page */
+      .topnav a.active {
+        background-color: #f5e50c;
+        color: white;
+      }
+      
+      /* Hide the link that should open and close the topnav on small screens */
+      .topnav .icon {
+        display: none;
+      }
+      
+      /* When the screen is less than 768 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+      @media screen and (max-width: 768px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+      
+      /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+      @media screen and (max-width: 768px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive a.icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+
+
 
 /* Main areas */
 
 /* index.html styles */
 
+#image-transition {
+  padding: 20px 0; /* Adjust padding as needed */
+  text-align: center; /* Center align content within one section */
+}
+
+.image-container {
+display: inline-block; /* Display as inline-block to center with margin auto */
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.unique-images {
+  max-width: 100%; /* Ensure images do not exceed container width */
+}
+
+.unique-image {
+  max-width: 45%; /* Adjsut image sie relative to container */
+  height: auto;
+  margin: 10px;
+  border-radius: 10px; /* Optional for rounded corners */
+}
+
+@media (max-width: 768px) {
+  .unique-image {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
 /* ourteam.html styles */
+#about-us {
+  padding: 20px 0; /* Adjust padding as needed */
+  text-align: center; /* Center align content within section */
+}
+
+.about-image-container {
+  max-width: 80%; /* Ensure images do not exceed container width */
+  width: 60%;
+  margin: 0 auto; /* Center align horizontally */
+}
+
+.about-image-container img {
+  max-width: 100%; /* Adjust image size relative to container */
+  height: auto;
+  display: block; /* Remove any default inline styles */
+  margin: 0 auto; /* Center align image within container */
+}
+
+.caption {
+  margin-top: 10px; /* Adjust spacing between image and caption */
+  font-style: italic;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .about-image-container {
+    max-width: 95%; /* Adjust for smaller screens */
+    width: 100%; /* Full width on smaller screens */
+  }
+}
 
 /* 5corevalues.html styles */
 
-#coreValues {
-background-image: url('slides/5corevalueslide.png');
+#core-values-main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* Ensure relative positioning for absolute overlay */
+  background-image: url(slides/ribbonslide.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; /* Center the background image */
+}
+
+/* Create an overlay to make the background image slightly opaque */
+#core-values-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+}
+
+#core-values {
+  text-align: center;
+  position: relative; /* Ensure content appears above the overlay */
+  z-index: 1; /* Ensure content is above the overlay */
+}
+
+#core-values h2 {
+  font-size: 2.5em;
+  color: #0033a0;
+  margin-bottom: 10px;
+}
+
+#core-values p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+.values-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.value {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 18%;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.value .circle {
+  background-color: #0033a0;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.value h3 {
+  color: #0033a0;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.value p {
+  font-size: 1em;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .value {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .value {
+    width: 100%;
+  }
+}
+
+/*  curriculum.html page stylings */
+
+#session-layout {
+  padding: 20px;
+}
+
+.session-image-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.session-image-container p {
+  flex: 1;
+  margin-right: 20px; /* Space between text and image */
+}
+
+.side-image {
+  max-width: 300px; /* Adjust as needed */
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: for rounded corners */
+}
+
+/* Styling for the session list */
+.session-list {
+  list-style: disc; /* Default disc bullets */
+  padding-left: 20px; /* Space for the bullets */
+}
+
+.session-list li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .session-image-container {
+    flex-direction: column;
+  }
+
+  .session-image-container p {
+    margin-right: 0;
+    margin-bottom: 20px; /* Space between text and image in column layout */
+  }
+
+  .side-image {
+    max-width: 100%;
+  }
+}
+
+/* New section for bottom images */
+#session-images {
+  margin-top: 40px; /* Space between sections */
+}
+
+.session-image-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.session-bottom-image {
+  max-width: 45%; /* Adjust based on your design needs */
+  height: auto;
+  margin: 10px;
+  border-radius: 10px; /* Optional: for rounded corners */
+  object-fit: cover; /* Ensures images maintain aspect ratio and cover their container */
+}
+
+@media (max-width: 768px) {
+  .session-bottom-image {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+#new-session-starts {
+  border: dotted 5px rgb(217, 255, 48);
+}
+
+#new-session-starts h3 {
+  color: rgb(12, 85, 180);
+  text-align: center;
+}
+
+#new-session-starts p {
+  text-align: center;
 }
 
 /* results.html styling */
-main {
-  padding: 20px;
-}
 
 #outcome {
   max-width: 1200px;
@@ -149,18 +428,7 @@ main {
       max-width: 70%; /* Adjust the percentage as needed */
   }
 }
-#new-session-starts {
-  border: dotted 5px rgb(217, 255, 48);
-}
 
-#new-session-starts h3 {
-  color: rgb(12, 85, 180);
-  text-align: center;
-}
-
-#new-session-starts p {
-  text-align: center;
-}
 
 h2 {
   text-align: center;
@@ -194,52 +462,21 @@ a {
   font-size: 20px;
 }
 
-#curriculum-timeline h4{
-  font-size: 18px;
-}
-
-#curriculum a {
-  display: block;
-  margin: 15px auto;
-  color: rgb(12, 85, 180);
-  text-align: center;
-  text-decoration: underline;
-}
-
-/* Modules Headers */
-
-.module h4 {
-  display: flex;
-  font-size: 21px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.module h4 .presenter,
-.module h4 .topic {
-  font-style: bold;
-  font-size: 20px;
-}
-
-.activity {
-  color: rgb(12,85,180);
-  text-align: center;
-}
 
 .graduation {
   color: rgb(12,85,180);
   text-align: center;
   border: solid 5px rgb(217, 255, 48);
 }
+
+
 /* Contact page */
-
-#contact p {
-  margin: 10px;
-  padding: 10px;
-
+#welcome {
+  padding: 5px;
 }
 
 #social a {
+  padding: 5px;
   color: rgb(12, 85, 180);
   text-decoration: underline;
 }
@@ -263,6 +500,7 @@ a {
 }
 
 /* The Attendance Chart */
+/*
 #chart {
   margin: 10px;
   padding-bottom: 10px;
@@ -279,14 +517,15 @@ a {
 /* Footer styles */
 
 footer {
-  background-color: rgb(12, 85, 180);
+  background-color: #0033a0;
   color: white;
   display: block;
   padding: 20px 0;
   text-align: center;
+  font-size: 18px;
 }
 
-#chartfooter {
+/* #chartfooter {
     width: 100%;
     background-color: rgb(12, 85, 180);
     color: white;
@@ -294,6 +533,7 @@ footer {
     text-align: center;
   }
 
+*/
 
 CSS for GALLERY
 

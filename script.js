@@ -1,26 +1,81 @@
-document.getElementById('menuToggle').addEventListener('click', function() {
-  var navLinks = document.getElementById('navLinks');
-  if (navLinks.style.display === 'flex') {
-      navLinks.style.display = 'none';
-  } else {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-  }
-});
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-/*  function myFunction() {
+function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
-    x.className += " responsive";
+      x.className += " responsive";
+      document.querySelector('.icon i').classList.remove('fa-bars');
+      document.querySelector('.icon i').classList.add('fa-times');
   } else {
-    x.className = "topnav";
+      x.className = "topnav";
+      document.querySelector('.icon i').classList.remove('fa-times');
+      document.querySelector('.icon i').classList.add('fa-bars');
   }
 }
-*/
+
+
+/* Image slide index.html */
+
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll(".unique-image");
+    let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach((image, idx) => {
+            if (idx === index) {
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        });
+    }
+
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    setInterval(changeImage, 5000); // Change image every 5 seconds (5000 milliseconds)
+});
+
+
+
+/* curriculum.html areas */
+
+document.addEventListener("DOMContentLoaded", function() {
+    const imageList1 = [
+        'images/classroombfc.jpg',
+        'images/derrickmitchellpave.jpg',
+        'images/accoutability2024.jpg'
+    ];
+    const imageList2 = [
+        'images/accountabilitypathway.jpg',
+        'images/reneeteaches.jpg',
+        'images/classmates.jpg'
+    ];
+    
+    let currentIndex1 = 0;
+    let currentIndex2 = 0;
+    
+    const imageElement1 = document.querySelectorAll(".session-bottom-image")[0];
+    const imageElement2 = document.querySelectorAll(".session-bottom-image")[1];
+    
+    function changeImage1() {
+        currentIndex1 = (currentIndex1 + 1) % imageList1.length;
+        imageElement1.src = imageList1[currentIndex1];
+    }
+    
+    function changeImage2() {
+        currentIndex2 = (currentIndex2 + 1) % imageList2.length;
+        imageElement2.src = imageList2[currentIndex2];
+    }
+    
+    setInterval(changeImage1, 8000);
+    setInterval(changeImage2, 6000);
+});
+
 
 /* Contact Form Regex Area */
 
+/*
 const fullNameInput = document.getElementById('fullNameInput');
 const phoneInput = document.getElementById('phoneInput');
 const emailInput = document.getElementById('emailInput');
@@ -63,8 +118,11 @@ fullNameInput.addEventListener('blur', validateFullName);
 phoneInput.addEventListener('blur', validatePhone);
 emailInput.addEventListener('blur', validateEmail);
 
+
 /* This updates the chart information every 24 hours */
 
+/*
 setTimeout(updateData, 86400000);
 
 updateData();
+*/
