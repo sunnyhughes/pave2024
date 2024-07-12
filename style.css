@@ -5,45 +5,78 @@ body {
   padding: 10px;
 }
 
-main {
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
   padding: 20px;
 }
 
 /* Header and Navigation Styles */
 
 .header-container {
-  padding: 10px 20px;
+  padding: 10px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
+flex: 0 0 auto;
 }
 
 .logo {
-  max-height: 50px;
+  height: auto;
+  width: 70px;
   margin-right: 10px;
 }
 
 .title-container {
-  flex: 2;
+  flex: 1;
   text-align: center;
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title {
+      font-size: 1.5em;
+      white-space: normal;
+  }
+
+  .header-container {
+      flex-direction: column;
+  }
+
+  .topnav {
+      width: 100%;
+  }
+
+  .topnav a {
+      display: block;
+      text-align: center;
+  }
+
+  .icon {
+      display: block;
+  }
 }
 
 /* Navigation menu stylings */
 
        /* Add a black background color to the top navigation */
        .topnav {
-        background-color: rgb(12, 85, 180);
+        background-color: #0033a0;
         overflow: hidden;
       }
       
@@ -51,22 +84,22 @@ main {
       .topnav a {
         float: left;
         display: block;
-        color: #9196e2;
+        color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
+        font-size: 18px;
       }
       
       /* Change the color of links on hover */
       .topnav a:hover {
-        background-color: #ddd;
+        background-color: #faf890;
         color: black;
       }
       
       /* Add an active class to highlight the current page */
       .topnav a.active {
-        background-color: #d5eb0f;
+        background-color: #f5e50c;
         color: white;
       }
       
@@ -467,6 +500,7 @@ a {
 }
 
 /* The Attendance Chart */
+/*
 #chart {
   margin: 10px;
   padding-bottom: 10px;
@@ -483,14 +517,15 @@ a {
 /* Footer styles */
 
 footer {
-  background-color: rgb(12, 85, 180);
+  background-color: #0033a0;
   color: white;
   display: block;
   padding: 20px 0;
   text-align: center;
+  font-size: 18px;
 }
 
-#chartfooter {
+/* #chartfooter {
     width: 100%;
     background-color: rgb(12, 85, 180);
     color: white;
@@ -498,6 +533,7 @@ footer {
     text-align: center;
   }
 
+*/
 
 CSS for GALLERY
 

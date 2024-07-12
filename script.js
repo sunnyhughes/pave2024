@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* Contact Form Regex Area */
 
+/*
 const fullNameInput = document.getElementById('fullNameInput');
 const phoneInput = document.getElementById('phoneInput');
 const emailInput = document.getElementById('emailInput');
@@ -117,8 +118,11 @@ fullNameInput.addEventListener('blur', validateFullName);
 phoneInput.addEventListener('blur', validatePhone);
 emailInput.addEventListener('blur', validateEmail);
 
+
 /* This updates the chart information every 24 hours */
 
+/*
 setTimeout(updateData, 86400000);
 
 updateData();
+*/
