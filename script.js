@@ -1,22 +1,16 @@
 document.getElementById('menuToggle').addEventListener('click', function() {
   var navLinks = document.getElementById('navLinks');
-  if (navLinks.style.display === 'flex') {
+  var menuToggle = document.getElementById('menuToggle');
+  if (navLinks.style.display === 'block') {
       navLinks.style.display = 'none';
-  } else {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-  }
+      menuToggle.classList.remove('fa-times');
+      menuToggle.classList.add('fa-bars');
+} else {
+      navLinks.style.display = 'block';
+      menuToggle.classList.remove('fa-bars');
+      menuToggle.classList.add('fa-times')
+    }
 });
-
-/* Toggle between adding and removing the "responsive" class to navLinks when the user clicks on the icon */
-  function myFunction() {
-  var x = document.getElementById("navLinks");
-  if (x.className === "navLinks") {
-    x.className += " responsive";
-  } else {
-    x.className = "navLinks";
-  }
-}
 
 
 /* Image slide index.html */
